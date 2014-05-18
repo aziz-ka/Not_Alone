@@ -1,0 +1,20 @@
+<h1>Hi there, <%= @senior.name %></h1>
+
+<ul>
+  <li><%= @senior.name %></li>
+  <li><%= @senior.age %></li>
+  <li><%= @senior.address %></li>
+  <li><%= @senior.phone_number %></li>
+</ul>
+
+<a href="/seniors/<%= @senior.id %>/edit"><button>Edit profile</button></a>
+<form action="/seniors/<%= @senior.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete profile</button>
+</form>
+<ul>
+  <% @senior.issues.each do |i| %>
+  <li>i.content</li>
+  <% end %>
+</ul>
