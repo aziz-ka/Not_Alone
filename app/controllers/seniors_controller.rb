@@ -3,8 +3,8 @@ class SeniorsController < ApplicationController
     @senior = Senior.new
   end
   def create
-    senior = Senior.create(senior_params)
-    redirect_to 'seniors/:id/profile'
+    @senior = Senior.create(senior_params)
+    redirect_to "seniors/#{@senior.id}/profile"
   end
   def profile
   end

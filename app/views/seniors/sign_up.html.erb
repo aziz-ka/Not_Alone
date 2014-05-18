@@ -1,1 +1,16 @@
-<%= render 'form' %>
+<form action="/seniors" method="post">
+  <%= token_tag%>
+  <input type="text" name="name" placeholder="Full name">
+  <input type="text" name="age" placeholder="Age">
+  <input type="text" name="address" placeholder="Address">
+  <input type="text" name="phone_number" placeholder="Phone number">
+  <input type="submit">
+</form>
+
+<!-- <form class="edit" action="/squares" method="post">
+<%= token_tag %>
+  <input type="text" placeholder="side length" name="id[side_length]">
+  <input type="text" placeholder="border radius" name="id[border_radius]">
+  <input type="text" placeholder="color" name="id[color]">
+  <input type="submit">
+</form> -->
