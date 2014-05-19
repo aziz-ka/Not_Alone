@@ -1,0 +1,21 @@
+<h1>Hi there, <%= @helper.name %></h1>
+
+<ul>
+  <li><%= @helper.name %></li>
+  <li><%= @helper.email %></li>
+  <li><%= @helper.address %></li>
+  <li><%= @helper.phone_number %></li>
+</ul>
+
+<a href="/helpers/<%= @helper.id %>/edit"><button>Edit profile</button></a>
+<form action="/helpers/<%= @helper.id %>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete profile</button>
+</form>
+
+<ul>
+  <% @helper.responses.each do |i| %>
+  <li>i.content</li>
+  <% end %>
+</ul>

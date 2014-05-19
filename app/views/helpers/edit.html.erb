@@ -1,0 +1,9 @@
+<form action="/helpers/<%= @helper.id %>/profile" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="helper[name]" placeholder="<%= @helper.name %>">
+  <input type="text" name="helper[email]" placeholder="<%= @helper.email %>">
+  <input type="text" name="helper[address]" placeholder="<%= @helper.address %>">
+  <input type="text" name="helper[phone_number]" placeholder="<%= @helper.phone_number %>">
+  <input type="submit">
+</form>
