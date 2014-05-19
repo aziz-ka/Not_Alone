@@ -7,6 +7,7 @@ class SeniorsController < ApplicationController
     redirect_to "/seniors/#{senior.id}/profile"
   end
   def profile
+    @user = current_user    
     @senior = Senior.find(params[:id])
   end
   def edit
@@ -25,6 +26,6 @@ class SeniorsController < ApplicationController
   private
 
   def senior_params
-    params.require(:senior).permit(:name, :age, :address, :phone_number)
+    params.require(:senior).permit(:name, :email, :age, :address, :phone_number, :password, :password_confirmation)
   end
 end

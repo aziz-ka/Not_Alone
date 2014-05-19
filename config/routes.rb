@@ -10,6 +10,17 @@ Rails.application.routes.draw do
   
   get 'twilio' => 'twilio#process_sms'
 
+
+  get 'sessions/new' => 'sessions#new', as: 'log_in'
+  post 'sessions' => 'sessions#create'
+
+  get 'sessions/aldric' => 'sessions#destroy'
+
+  delete 'sessions' => 'sessions#destroy', as: 'log_out'
+
+  get 'profiles' => 'profiles#index'
+  
+
   get 'helpers/sign_up' => 'helpers#sign_up'
   post 'helpers' => 'helpers#create'
   get 'helpers/:id/profile' => 'helpers#profile'

@@ -1,21 +1,35 @@
-<h1>Hi there, <%= @senior.name %></h1>
+<% if current_user %>
 
-<ul>
-  <li><%= @senior.name %></li>
-  <li><%= @senior.age %></li>
-  <li><%= @senior.address %></li>
-  <li><%= @senior.phone_number %></li>
-</ul>
+  <h1>Hi there, <%= current_user.name %></h1>
 
-<a href="/seniors/<%= @senior.id %>/edit"><button>Edit profile</button></a>
-<form action="/seniors/<%= @senior.id %>" method="post">
-  <%= token_tag %>
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit">Delete profile</button>
-</form>
+  <ul>
+    <li><%= current_user.name %></li>
+    <li><%= current_user.email %></li>
+    <li><%= current_user.age %></li>
+    <li><%= current_user.address %></li>
+    <li><%= current_user.phone_number %></li>
+  </ul>
+  
+  <form action="/sessions" method="post">
+    <%= token_tag %>
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Log out</button>
+  </form>  
+  <a href="/seniors/<%= current_user.id %>/edit"><button>Edit profile</button></a>
+  <form action="/seniors/<%= current_user.id %>" method="post">
+    <%= token_tag %>
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Delete profile</button>
+  </form>
 
-<ul>
-  <% @senior.issues.each do |i| %>
-  <li>i.content</li>
-  <% end %>
-</ul>
+  <ul>
+    <% current_user.issues.each do |i| %>
+    <li>i.content</li>
+    <% end %>
+  </ul>
+
+<% else %>
+<h1>NOT LOGGED IN! BAD USER BAD! SIT!</h1>
+  <!-- <a href="/sessions/new"><button>Log in</button></a>
+  <a href="/seniors/sign_up"><button>Sign up</button></a> -->
+<% end %>

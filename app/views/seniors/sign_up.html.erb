@@ -1,8 +1,11 @@
 <form action="/seniors" method="post">
   <%= token_tag %>
   <input type="text" name="senior[name]" placeholder="Full name">
+  <input type="text" name="senior[email]" placeholder="Email">
   <input type="text" name="senior[age]" placeholder="Age">
   <input type="text" name="senior[address]" placeholder="Address">
   <input type="text" name="senior[phone_number]" placeholder="Phone number">
+  <input type="password" name="senior[password]" placeholder="Password">
+  <input type="password" name="senior[password_confirmation]" placeholder="Confirm password">
   <input type="submit">
 </form>
