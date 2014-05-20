@@ -1,5 +1,13 @@
 <h1>All issues</h1>
+<h3>To post a new issue just text (732) 993-6801</h3>
 
-<% @client.account.messages.list.each do |message| %>
-  <p><%= message.from %> : <%= message.body %></p>
+<a href="/seniors/profile"><button>Profile page</button></a>
+<a href="/"><button>Main page</button></a>
+
+<br><br>
+
+<% @issues.each do |i| %>
+  <%= i.senior_id %>
+  <%= i.content %>
+  <br>
 <% end %>

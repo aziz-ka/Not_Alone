@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get 'seniors/profile/edit' => 'seniors#edit'
   put 'seniors/profile' => 'seniors#update'
   delete 'seniors/:id' => 'seniors#delete'
-  
-  get 'twilio' => 'twilio#process_sms'
 
 
   get 'sessions/new' => 'sessions#new', as: 'log_in'
@@ -26,6 +24,8 @@ Rails.application.routes.draw do
   delete 'helpers/:id' => 'helpers#delete'
 
   get 'issues' => 'issues#index'
+  
+  get 'twilio' => 'twilio#process_sms'
 
 end
 
