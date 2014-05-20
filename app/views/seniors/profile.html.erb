@@ -14,8 +14,8 @@
     <%= token_tag %>
     <input type="hidden" name="_method" value="delete">
     <button type="submit">Log out</button>
-  </form>  
-  <a href="/seniors/<%= current_user.id %>/edit"><button>Edit profile</button></a>
+  </form>
+  <a href="/seniors/profile/edit"><button>Edit profile</button></a>
   <form action="/seniors/<%= current_user.id %>" method="post">
     <%= token_tag %>
     <input type="hidden" name="_method" value="delete">

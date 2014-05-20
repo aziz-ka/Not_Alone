@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get '/' => 'welcome#index'
   get 'seniors/sign_up' => 'seniors#sign_up' # instead of new
   post 'seniors' => 'seniors#create'
-  get 'seniors/:id/profile' => 'seniors#profile' # instead of show
-  get 'seniors/:id/edit' => 'seniors#edit'
-  put 'seniors/:id/profile' => 'seniors#update'
+  get 'seniors/profile' => 'seniors#profile' # instead of show
+  get 'seniors/profile/edit' => 'seniors#edit'
+  put 'seniors/profile' => 'seniors#update'
   delete 'seniors/:id' => 'seniors#delete'
   
   get 'twilio' => 'twilio#process_sms'
@@ -13,13 +13,10 @@ Rails.application.routes.draw do
 
   get 'sessions/new' => 'sessions#new', as: 'log_in'
   post 'sessions' => 'sessions#create'
-
-  get 'sessions/aldric' => 'sessions#destroy'
-
   delete 'sessions' => 'sessions#destroy', as: 'log_out'
 
   get 'profiles' => 'profiles#index'
-  
+
 
   get 'helpers/sign_up' => 'helpers#sign_up'
   post 'helpers' => 'helpers#create'
@@ -27,6 +24,8 @@ Rails.application.routes.draw do
   get 'helpers/:id/edit' => 'helpers#edit'
   put 'helpers/:id/profile' => 'helpers#update'
   delete 'helpers/:id' => 'helpers#delete'
+
+  get 'issues' => 'issues#index'
 
 end
 

@@ -1,10 +1,10 @@
-<form action="/seniors/<%= @senior.id %>/profile" method="post">
+<form action="/seniors/profile" method="post">
   <%= token_tag%>
   <input type="hidden" name="_method" value="put">
-  <input type="text" name="senior[name]" placeholder="<%= @senior.name %>">
-  <input type="text" name="senior[email]" placeholder="<%= @senior.email %>">
-  <input type="text" name="senior[age]" placeholder="<%= @senior.age %>">
-  <input type="text" name="senior[address]" placeholder="<%= @senior.address %>">
-  <input type="text" name="senior[phone_number]" placeholder="<%= @senior.phone_number %>">
+  <input type="text" name="senior[name]" placeholder="<%= current_user.name %>">
+  <input type="text" name="senior[email]" placeholder="<%= current_user.email %>">
+  <input type="text" name="senior[age]" placeholder="<%= current_user.age %>">
+  <input type="text" name="senior[address]" placeholder="<%= current_user.address %>">
+  <input type="text" name="senior[phone_number]" placeholder="<%= current_user.phone_number %>">
   <input type="submit">
 </form>

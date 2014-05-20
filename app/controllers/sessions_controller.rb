@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if senior && senior.authenticate(params[:senior][:password])
       session[:senior_id] = senior.id
-      redirect_to "/seniors/#{senior.id}/profile", notice: "Signed In as #{senior.email}"
+      redirect_to "/seniors/profile", notice: "Signed In as #{senior.email}"
     else
       redirect_to "/sessions/new", alert: 'Log-In Failed'
     end
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:senior_id] = nil
-    redirect_to "sessions/new", notice: "Logged-Out"
+    redirect_to "/sessions/new", notice: "Logged-Out"
   end
 
 end

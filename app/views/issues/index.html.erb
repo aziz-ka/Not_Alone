@@ -1,0 +1,5 @@
+<h1>All issues</h1>
+
+<% @client.account.messages.list.each do |message| %>
+  <p><%= message.from %> : <%= message.body %></p>
+<% end %>
