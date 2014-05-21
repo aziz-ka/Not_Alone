@@ -25,7 +25,7 @@
   <h3>Issues I submitted</h3>
   <ul>
     <% current_user.issues.each do |i| %>
-    <li><%= i.content %><br/>Created <%= i.created_at.month %>-<%= i.created_at.day %>-<%= i.created_at.year %></li>
+    <li><%= i.content %><br/>Created <%= i.created_at.strftime("%b %d, %Y") %></li>
     <% end %>
   </ul>
 
