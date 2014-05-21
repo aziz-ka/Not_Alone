@@ -1,3 +1,11 @@
+<% if @senior.errors.any? %>
+  <ul>
+  <% @senior.errors.full_messages.each do |i| %>
+    <li><%= i %></li>    
+  <% end %>
+  </ul>
+<% end %>
+
 <form action="/seniors" method="post">
   <%= token_tag %>
   <input type="text" name="senior[name]" placeholder="Full name">
@@ -8,4 +16,7 @@
   <input type="password" name="senior[password]" placeholder="Password">
   <input type="password" name="senior[password_confirmation]" placeholder="Confirm password">
   <input type="submit">
+  Terms of service<input type="checkbox" name="senior[terms]">
 </form>
+
+<a href="/"><button>Main Page</button></a>

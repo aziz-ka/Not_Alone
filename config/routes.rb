@@ -13,9 +13,6 @@ Rails.application.routes.draw do
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy', as: 'log_out'
 
-  get 'profiles' => 'profiles#index'
-
-
   get 'helpers/sign_up' => 'helpers#sign_up'
   post 'helpers' => 'helpers#create'
   get 'helpers/:id/profile' => 'helpers#profile'
@@ -26,6 +23,8 @@ Rails.application.routes.draw do
   get 'issues' => 'issues#index'
   
   get 'twilio' => 'twilio#process_sms'
+
+  get 'profiles' => 'profiles#index'
 
 end
 

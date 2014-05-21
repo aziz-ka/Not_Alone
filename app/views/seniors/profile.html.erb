@@ -22,18 +22,16 @@
     <button type="submit">Delete profile</button>
   </form>
 
-  <h3>My Issues</h3>
+  <h3>Issues I created</h3>
   <ul>
     <% current_user.issues.each do |i| %>
-    <li><%= i.content %></li>
+    <li><%= i.content %><br/>Created <%= i.created_at %></li>
     <% end %>
   </ul>
 
 <% else %>
-<h1>NOT LOGGED IN! BAD USER BAD! SIT!</h1>
+<h1>You must log in first</h1>
   <a href="/sessions/new"><button>Log in</button></a>
-  <!-- <a href="/seniors/sign_up"><button>Sign up</button></a> -->
 <% end %>
 
-<a href="/issues"><button>View all issues</button></a>
 <a href="/"><button>Main page</button></a>

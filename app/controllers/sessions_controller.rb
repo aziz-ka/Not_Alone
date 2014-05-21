@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if senior && senior.authenticate(params[:senior][:password])
       session[:senior_id] = senior.id
-      redirect_to "/seniors/profile", notice: "Signed In as #{senior.email}"
+      redirect_to "/seniors/profile", notice: "Signed in as #{senior.email}"
     else
       redirect_to "/sessions/new", alert: 'Log-In Failed'
     end

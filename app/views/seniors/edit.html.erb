@@ -1,3 +1,11 @@
+<% if current_user.errors.any? %>
+  <ul>
+  <% current_user.errors.full_messages.each do |i| %>
+    <li><%= i %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <form action="/seniors/profile" method="post">
   <%= token_tag%>
   <input type="hidden" name="_method" value="put">
@@ -6,5 +14,7 @@
   <input type="text" name="senior[age]" placeholder="<%= current_user.age %>">
   <input type="text" name="senior[address]" placeholder="<%= current_user.address %>">
   <input type="text" name="senior[phone_number]" placeholder="<%= current_user.phone_number %>">
+  <input type="password" name="senior[password]" placeholder="Password">
+  <input type="password" name="senior[password_confirmation]" placeholder="Confirm password">
   <input type="submit">
 </form>

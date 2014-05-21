@@ -9,5 +9,6 @@
 <% @issues.each do |i| %>
   <%= i.senior.name %>:
   <%= i.content %>
+  Created <%= i.created_at %>
   <br>
 <% end %>
