@@ -4,11 +4,11 @@
 
 <a href="/seniors/sign_up"><button>Ask for Help</button></a>
 <a href="/issues"><button>View Issues</button></a>
-<a href="/sessions/new"><button>Log In</button></a>
 <a href="/seniors/profile"><button>View Profile</button></a>
-
-<!-- if session is true redirect_to '/seniors/profile'
-else redirect_to '/sessions/new' -->
+<!-- if session is true show login button -->
+<% unless @senior %>
+<a href="/sessions/new"><button>Log In</button></a>
+<% end %>
 
 <p>Consider yourself a techie? Know a thing or two about modern day technolodies? Good at troubleshooting and teaching? Gadgets are your best friends? Feel like fish in a water with everything that has a screen and a button? There are people who are less fortunate when it comes to tecnnology. Our grandmas and grandpas could sure use your help. Sign up to become a helper.</p>
 

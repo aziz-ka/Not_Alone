@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    Senior.find(session[:senior_id]) if session[:senior_id]
+    @current_user ||= Senior.find(session[:senior_id]) if session[:senior_id]
   end
 
   def authorize

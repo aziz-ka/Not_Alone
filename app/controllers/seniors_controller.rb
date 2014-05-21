@@ -17,9 +17,9 @@ class SeniorsController < ApplicationController
   end
   def edit
     # @senior = Senior.find(params[:id])
-    senior = current_user
+    @senior = current_user
   end
-  def update
+  def update    
     @senior = current_user
     @senior.update(senior_params)
     if @senior.save
