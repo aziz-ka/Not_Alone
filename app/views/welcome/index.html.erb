@@ -1,36 +1,40 @@
-<header>
-  <h1>Welcome</h1>
-  <nav>
-    <ul class="navbar">
-      <li><a href="/issues">Issues</a></li>
-      <li><a href="/seniors/profile">My Profile</a></li>
-      <!-- if session is true show login button -->
-      <% unless @senior %>
-      <li><a href="/sessions/new">Sign In</a></li>
-      <% end %>
-      <li><a href="/seniors/sign_up">Sign Up</a></li>
+<div class="index">
+  <header>
+    <h1>Welcome</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="/issues">Issues</a></li>
+        <li><a href="/seniors/profile">My Profile</a></li>
+        <!-- if session is true show login button -->
+        <% unless @senior %>
+        <li><a href="/sessions/new">Sign In</a></li>
+        <% end %>
+        <li><a href="/seniors/sign_up">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="senior">
+    <ul>
+      <li>Having a problem with your computer?</li>
+      <li>Internet connection is off-line?</li>
+      <li>No signal message on your TV?</li>
+      <li>Don't know how to set up Skype to video chat with your loved ones?</li>
+      <li>Can't figure out that buttonless tablet thing you got from your kids on Christmas?</li>
+      <li><h3>Whatever your problem is... You are not alone! Sign up now to get help you need.</h3></li>
     </ul>
-  </nav>
-</header>
-<section class="senior">
-  <ul>
-    <li>Having a problem with your computer?</li>
-    <li>Internet connection is off-line?</li>
-    <li>No signal message on your TV?</li>
-    <li>Don't know how to set up Skype to video chat with your loved ones?</li>
-    <li>Can't figure out that buttonless tablet thing you got from your kids on Christmas?</li>
-    <li><h3>Whatever your problem is... You are not alone! Sign up now to get help you need.</h3></li>
-  </ul>
-</section>
-<h2>It doesn't get any easier. Just text your question or answer from your cell phone. Whenever someone replies to your request we will notify you via email or a text message. How awesome is that?!</h2>
-<section class="helper">
-  <ul>
-    <li>Consider yourself a techie?</li>
-    <li>Know a thing or two about modern day technolodies?</li>
-    <li>Good at troubleshooting and teaching? Gadgets are your best friends?</li>
-    <li>Feel like fish in a water with everything that has a screen and a button?</li>
-    <li><h3>There are people who are less fortunate when it comes to tecnnology. Our grandmas and grandpas could sure use your help. Sign up to become a helper.</h3></li>
-  </ul>
-</section>
+  </section>
+  <h2>It doesn't get any easier. Just text your question or answer from your cell phone. Whenever someone replies to your request we will notify you via email or a text message. How awesome is that?!</h2>
+  <section class="helper">
+    <ul>
+      <li>Consider yourself a techie?</li>
+      <li>Know a thing or two about modern day technolodies?</li>
+      <li>Good at troubleshooting and teaching? Gadgets are your best friends?</li>
+      <li>Feel like fish in a water with everything that has a screen and a button?</li>
+      <li><h3>There are people who are less fortunate when it comes to tecnnology. Our grandmas and grandpas could sure use your help. Sign up to become a helper.</h3></li>
+    </ul>
+  </section>
 
-<p>Made by Aziz Hasanov</p>
+  <footer>
+    <p>Made by Aziz Hasanov</p>
+  </footer>
+</div>

@@ -1,14 +1,26 @@
-<h1>All issues</h1>
-<h3>To post a new issue just text (732) 993-6801</h3>
-
-<a href="/seniors/profile"><button>Profile page</button></a>
-<a href="/"><button>Main page</button></a>
-
-<br><br>
-
-<% @issues.each do |i| %>
-  <%= i.senior.name %>:
-  <%= i.content %>
-  Created <%= i.created_at %>
-  <br>
-<% end %>
+<div class="issues">
+  <header>
+    <h1>All issues</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/seniors/profile">My Profile</a></li>
+        <li><a href="/sessions/new">Sign In</a></li>
+        <li><a href="/seniors/sign_up">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h2>To submit new issue just text the phone number you see on your profile page</h2>
+  
+  <% @issues.each do |i| %>
+  <table>
+    <tr>
+      <td><%= i.senior.name %><br><%= i.created_at.strftime("%b %d, %Y") %></td>
+      <td><%= i.content %></td>
+    </tr>
+  </table>
+  <% end %>
+  <footer>
+    <p>Made by Aziz Hasanov</p>
+  </footer>
+</div>
