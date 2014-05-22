@@ -63,10 +63,10 @@ section.senior, section.helper {
   position: relative;
 }
 section.senior {
-  background-image: url(Grandmother-Using-Computer.jpg);
+  background-image: asset-url("Grandmother-Using-Computer.jpg");
 }
 .helper {
-  background-image: url(HelperImage.jpg)
+  background-image: asset-url("HelperImage.jpg")
 }
 section.senior ul, section.helper ul {
   position: absolute;
