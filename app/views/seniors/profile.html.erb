@@ -43,7 +43,7 @@
   <h3>To report a new problem just text (732) 993-6801</h3>
     <ul>
       <% current_user.issues.each do |i| %>
-        <li><%= i.content %><br/>Created <%= i.created_at.strftime("%b %d, %Y") %></li>
+        <li><%= i.content %><br/><p>Created <%= i.created_at.strftime("%b %d, %Y") %></p></li>
       <% end %>
     </ul>
   </section>
