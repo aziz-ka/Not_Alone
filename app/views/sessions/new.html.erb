@@ -1,10 +1,27 @@
-<h1>Log in</h1>
+<div class="session">
+  <header>
+    <h1>Welcome back</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/issues">Issues</a></li>
+        <li><a href="/seniors/profile">My Profile</a></li>
+        <% unless @senior %>
+        <li><a href="/sessions/new">Sign In</a></li>
+        <% end %>
+        <li><a href="/seniors/sign_up">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h2>Log in</h2>
 
-<form action="/sessions" method="post">
-  <%= token_tag %>
-  <input type="text" name="senior[email]" placeholder="Email">
-  <input type="password" name="senior[password]" placeholder="Password">
-  <input type="submit">
-</form>
-
-<a href="/"><button>Main Page</button></a>
+  <form action="/sessions" method="post">
+    <%= token_tag %>
+    <input type="text" name="senior[email]" placeholder="Email">
+    <input type="password" name="senior[password]" placeholder="Password">
+    <input type="submit">
+  </form>
+  <footer>
+    <p>Made by Aziz Hasanov</p>
+  </footer>
+</div>

@@ -1,22 +1,38 @@
-<% if @senior.errors.any? %>
-  <ul>
-  <% @senior.errors.full_messages.each do |i| %>
-    <li><%= i %></li>    
-  <% end %>
-  </ul>
-<% end %>
+<div class="signup">
+  <header>
+    <h1>Sign Up</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/issues">Issues</a></li>
+        <li><a href="/seniors/profile">My Profile</a></li>
+        <li><a href="/sessions/new">Sign In</a></li>
+        <li><a href="/seniors/sign_up">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <% if @senior.errors.any? %>
+    <ul class="errors">
+    <% @senior.errors.full_messages.each do |i| %>
+      <li><%= i %></li>    
+    <% end %>
+    </ul>
+  <% end %>
+
+  <h2>Become a member</h2>
 <form action="/seniors" method="post">
   <%= token_tag %>
   <input type="text" name="senior[name]" placeholder="Full name">
   <input type="text" name="senior[email]" placeholder="Email">
-  <input type="text" name="senior[age]" placeholder="Age">
+  <!-- <input type="text" name="senior[age]" placeholder="Age"> -->
   <input type="text" name="senior[address]" placeholder="Address">
   <input type="text" name="senior[phone_number]" placeholder="Phone number">
   <input type="password" name="senior[password]" placeholder="Password">
   <input type="password" name="senior[password_confirmation]" placeholder="Confirm password">
   <input type="submit">
-  Terms of service<input type="checkbox" name="senior[terms]">
 </form>
-
-<a href="/"><button>Main Page</button></a>
+<footer>
+  <p>Made by Aziz Hasanov</p>
+</footer>
+</div>

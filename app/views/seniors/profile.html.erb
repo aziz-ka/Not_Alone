@@ -1,37 +1,81 @@
-<% if current_user %>
+<div class="profile">
+  <header>
+    <h1>My profile</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/issues">Issues</a></li>
+        <li><a href="/seniors/profile">My Profile</a></li>
+        <% unless @senior %>
+        <li><a href="/sessions/new">Sign In</a></li>
+        <% end %>
+        <li><a href="/seniors/sign_up">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h1>Hi there, <%= current_user.name %></h1>
+  <% if current_user %>
 
-  <ul>
-    <li><%= current_user.name %></li>
-    <li><%= current_user.email %></li>
-    <li><%= current_user.age %></li>
-    <li><%= current_user.address %></li>
-    <li><%= current_user.phone_number %></li>
-  </ul>
+  <h2>Hi there, <%= current_user.name %></h2>
+  <section class="account">
+    <h3>Your account info</h3>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td><%= current_user.name %></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td><%= current_user.address %></td>
+      </tr>
+      <tr>
+        <td>Phone number</td>
+        <td><%= current_user.phone_number %></td>
+      </tr>
+    </table>
+  </section>
   
-  <form action="/sessions" method="post">
-    <%= token_tag %>
-    <input type="hidden" name="_method" value="delete">
-    <button type="submit">Log out</button>
-  </form>
-  <a href="/seniors/profile/edit"><button>Edit profile</button></a>
-  <form action="/seniors/<%= current_user.id %>" method="post">
-    <%= token_tag %>
-    <input type="hidden" name="_method" value="delete">
-    <button type="submit">Delete profile</button>
-  </form>
+  <section class="myissues">
+  <h3>Issues you submitted</h3>
+    <ul>
+      <% current_user.issues.each do |i| %>
+        <li><%= i.content %><br/>Created <%= i.created_at.strftime("%b %d, %Y") %></li>
+      <% end %>
+    </ul>
+  </section>
 
-  <h3>Issues I submitted</h3>
-  <ul>
-    <% current_user.issues.each do |i| %>
-    <li><%= i.content %><br/>Created <%= i.created_at.strftime("%b %d, %Y") %></li>
-    <% end %>
-  </ul>
+  <% else %>
 
-<% else %>
-<h1>You must log in first</h1>
-  <a href="/sessions/new"><button>Log in</button></a>
-<% end %>
+    <h2>You must log in first</h2>
 
-<a href="/"><button>Main page</button></a>
+  <% end %>
+
+  <footer>
+    <ul>
+      <li>
+        <form action="/sessions" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">Log out</button>
+        </form>
+      </li>
+      <li>
+        <form>
+          <a href="/seniors/profile/edit"><button>Edit profile</button></a>
+        </form>
+      </li>
+      <li>
+        <form action="/seniors/<%= current_user %>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">Delete profile</button>
+        </form>
+      </li>
+    </ul>
+    <p>Made by Aziz Hasanov</p>
+  </footer>
+</div>

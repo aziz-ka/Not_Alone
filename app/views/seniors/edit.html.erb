@@ -1,20 +1,42 @@
-<% if @senior.errors.any? %>
-  <ul>
-  <% @senior.errors.full_messages.each do |i| %>
-    <li><%= i %></li>
+<div class="edit">
+  <header>
+    <h1>Update profile</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/issues">Issues</a></li>
+        <li><a href="/seniors/profile">My Profile</a></li>
+        <% unless @senior %>
+        <li><a href="/sessions/new">Sign In</a></li>
+        <% end %>
+        <li><a href="/seniors/sign_up">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+  <% if @senior.errors.any? %>
+    <ul class="errors">
+    <% @senior.errors.full_messages.each do |i| %>
+      <li><%= i %></li>
+    <% end %>
+    </ul>
   <% end %>
-  </ul>
-<% end %>
+  
+  <h2>Edit your account information here</h2>
 
-<form action="/seniors/profile" method="post">
-  <%= token_tag%>
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="senior[name]" value="<%= @senior.name %>">
-  <input type="text" name="senior[email]" value="<%= @senior.email %>">
-  <input type="text" name="senior[age]" value="<%= @senior.age %>">
-  <input type="text" name="senior[address]" value="<%= @senior.address %>">
-  <input type="text" name="senior[phone_number]" value="<%= @senior.phone_number %>">
-  <input type="password" name="senior[password]" value="Password">
-  <input type="password" name="senior[password_confirmation]" value="Confirm password">
-  <input type="submit">
-</form>
+  <form action="/seniors/profile" method="post">
+    <%= token_tag%>
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="senior[name]" value="<%= @senior.name %>">
+    <input type="text" name="senior[email]" value="<%= @senior.email %>">
+    <input type="text" name="senior[address]" value="<%= @senior.address %>">
+    <input type="text" name="senior[phone_number]" value="<%= @senior.phone_number %>">
+    <input type="password" name="senior[password]" value="Password">
+    <input type="password" name="senior[password_confirmation]" value="Confirm password">
+    <input type="submit">
+  </form>
+
+
+  <footer>
+    <p>Made by Aziz Hasanov</p>
+  </footer>
+</div>
