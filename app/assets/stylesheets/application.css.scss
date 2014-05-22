@@ -34,7 +34,7 @@ header, footer {
   background-color: #CC4822;
 }
 header h1 {
-  margin: 1% 2% 0;
+  margin: 1.25% 2% 0;
   position: absolute;
 }
 h1, nav {
@@ -157,22 +157,21 @@ h2 {
 .session form {
   margin: 5% auto 8%;
 }
-.profile section {
-  width: 40%;
-}
 .account {
+  width: 30%;
   display: inline-block;
   float: left;
   padding: 0 0 0 10%;
 }
 .profile h3 {
-  padding-left: 12%;
+  font-size: 35px;
 }
 .account table {
-  margin: 10% 0;
+  margin: 20% 0;
   width: 100%;
 }
 .myissues {
+  width: 50%;
   display: inline-block;
   float: right;
   padding: 0 10% 0 0;
