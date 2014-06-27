@@ -7,7 +7,7 @@
         <li><a href="/issues">Issues</a></li>
         <li><a href="/seniors/profile">My Profile</a></li>
         <% unless @senior %>
-        <li><a href="/sessions/new">Sign In</a></li>
+          <li><a href="/sessions/new">Sign In</a></li>
         <% end %>
         <li><a href="/seniors/sign_up">Sign Up</a></li>
       </ul>
@@ -16,37 +16,37 @@
 
   <% if current_user %>
 
-  <h2>Hi there, <%= current_user.name %></h2>
-  <section class="account">
-    <h3>Your account info</h3>
-    <table>
-      <tr>
-        <td>Name</td>
-        <td><%= current_user.name %></td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td><%= current_user.email %></td>
-      </tr>
-      <tr>
-        <td>Address</td>
-        <td><%= current_user.address %></td>
-      </tr>
-      <tr>
-        <td>Phone number</td>
-        <td><%= current_user.phone_number %></td>
-      </tr>
-    </table>
-  </section>
-  
-  <section class="myissues">
-  <h3>To report a new problem just text (732) 993-6801</h3>
-    <ul>
-      <% current_user.issues.each do |i| %>
-        <li><%= i.content %><br/><p>Created <%= i.created_at.strftime("%b %d, %Y") %></p></li>
-      <% end %>
-    </ul>
-  </section>
+    <h2>Hi there, <%= current_user.name %></h2>
+    <section class="account">
+      <h3>Your account info</h3>
+      <table>
+        <tr>
+          <td>Name</td>
+          <td><%= current_user.name %></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><%= current_user.email %></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><%= current_user.address %></td>
+        </tr>
+        <tr>
+          <td>Phone number</td>
+          <td><%= current_user.phone_number %></td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="myissues">
+      <h3>To report a new problem just text (732) 993-6801</h3>
+      <ul>
+        <% current_user.issues.each do |i| %>
+          <li><%= i.content %><br/><p>Created <%= i.created_at.strftime("%b %d, %Y") %></p></li>
+        <% end %>
+      </ul>
+    </section>
 
   <% else %>
 
