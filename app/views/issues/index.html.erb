@@ -7,21 +7,21 @@
         <li><a href="/issues">Issues</a></li>
         <li><a href="/seniors/profile">My Profile</a></li>
         <% unless @senior %>
-        <li><a href="/sessions/new">Sign In</a></li>
+          <li><a href="/sessions/new">Sign In</a></li>
         <% end %>
         <li><a href="/seniors/sign_up">Sign Up</a></li>
       </ul>
     </nav>
   </header>
   <h2>To submit new issue just text the phone number you see on your profile page</h2>
-  
+
   <% @issues.each do |i| %>
-  <table>
-    <tr>
-      <td><%= i.senior.name %><br><%= i.created_at.strftime("%b %d, %Y") %></td>
-      <td><%= i.content %></td>
-    </tr>
-  </table>
+    <table>
+      <tr>
+        <td><%= i.senior.name %><br><%= i.created_at.strftime("%b %d, %Y") %></td>
+        <td><%= i.content %></td>
+      </tr>
+    </table>
   <% end %>
   <footer>
     <p>Made by Aziz Hasanov</p>
