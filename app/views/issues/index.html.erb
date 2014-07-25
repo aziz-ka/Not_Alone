@@ -15,13 +15,24 @@
   </header>
   <h2>To submit new issue just text the phone number you see on your profile page</h2>
 
-  <% @issues.each do |i| %>
-    <table>
-      <tr>
-        <td><%= i.senior.name %><br><%= i.created_at.strftime("%b %d, %Y") %></td>
-        <td><%= i.content %></td>
-      </tr>
-    </table>
+  <% if current_user %>
+    <% current_user.issues.each do |i| %>
+      <table>
+        <tr>
+          <td><%= i.senior.name %><br><%= i.created_at.strftime("%b %d, %Y") %></td>
+          <td><%= i.content %></td>
+        </tr>
+      </table>
+    <% end %>
+  <% else %>
+    <% @issues.each do |i| %>
+      <table>
+        <tr>
+          <td><%= i.senior.name %><br><%= i.created_at.strftime("%b %d, %Y") %></td>
+          <td><%= i.content %></td>
+        </tr>
+      </table>
+    <% end %>
   <% end %>
   <footer>
     <p>Made as is by Aziz</p>
