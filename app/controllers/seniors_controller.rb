@@ -14,11 +14,9 @@ class SeniorsController < ApplicationController
   end
 
   def profile
-    # ?
   end
 
   def edit
-    @senior = current_user
   end
 
   def update

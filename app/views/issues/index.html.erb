@@ -6,10 +6,10 @@
         <li><a href="/">Home</a></li>
         <li><a href="/issues">Issues</a></li>
         <li><a href="/seniors/profile">My Profile</a></li>
-        <% unless @senior %>
+        <% unless current_user %>
           <li><a href="/sessions/new">Sign In</a></li>
+          <li><a href="/seniors/sign_up">Sign Up</a></li>
         <% end %>
-        <li><a href="/seniors/sign_up">Sign Up</a></li>
       </ul>
     </nav>
   </header>
@@ -24,6 +24,6 @@
     </table>
   <% end %>
   <footer>
-    <p>Made by Aziz Hasanov</p>
+    <p>Made as is by Aziz</p>
   </footer>
 </div>

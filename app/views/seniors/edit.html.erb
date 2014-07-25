@@ -6,16 +6,16 @@
         <li><a href="/">Home</a></li>
         <li><a href="/issues">Issues</a></li>
         <li><a href="/seniors/profile">My Profile</a></li>
-        <% unless @senior %>
+        <% unless current_user %>
           <li><a href="/sessions/new">Sign In</a></li>
+          <li><a href="/seniors/sign_up">Sign Up</a></li>
         <% end %>
-        <li><a href="/seniors/sign_up">Sign Up</a></li>
       </ul>
     </nav>
   </header>
-  <% if @senior.errors.any? %>
+  <% if current_user.errors.any? %>
     <ul class="errors">
-      <% @senior.errors.full_messages.each do |i| %>
+      <% current_user.errors.full_messages.each do |i| %>
         <li><%= i %></li>
       <% end %>
     </ul>
@@ -26,10 +26,10 @@
   <form action="/seniors/profile" method="post">
     <%= token_tag%>
     <input type="hidden" name="_method" value="put">
-    <input type="text" name="senior[name]" value="<%= @senior.name %>">
-    <input type="text" name="senior[email]" value="<%= @senior.email %>">
-    <input type="text" name="senior[address]" value="<%= @senior.address %>">
-    <input type="text" name="senior[phone_number]" value="<%= @senior.phone_number %>">
+    <input type="text" name="senior[name]" value="<%= current_user.name %>">
+    <input type="text" name="senior[email]" value="<%= current_user.email %>">
+    <input type="text" name="senior[address]" value="<%= current_user.address %>">
+    <input type="text" name="senior[phone_number]" value="<%= current_user.phone_number %>">
     <input type="password" name="senior[password]" value="Password">
     <input type="password" name="senior[password_confirmation]" value="Confirm password">
     <input type="submit">
@@ -37,6 +37,6 @@
 
 
   <footer>
-    <p>Made by Aziz Hasanov</p>
+    <p>Made as is by Aziz</p>
   </footer>
 </div>
