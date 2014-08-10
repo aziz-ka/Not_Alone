@@ -1,8 +1,10 @@
-<h1><em>Not Alone</em> - a web app built with Ruby On Rails and Twilio API.</h1>
+<h1>Not Alone</h1>
 <br/>
-<h5>It helps people of older generations who may have difficulties or questions when it comes to technology connect with younger guys and gals who are willing to help. Users connect to each other by sending text messages to Not Alone phone number. Each message is recieved and processed on the back end and displayed on the "Issues" page along with sender's name and date the message was sent on.</h5>
+<p>Not Alone web application helps people of older generations who may have difficulties or questions when it comes to technology connect with younger guys and gals who are willing to help. Users connect to each other by sending text messages to Not Alone phone number. Each message is recieved and processed on the back end and displayed on the "Issues" page along with sender's name and date the message was sent on.</p>
 <br/>
-<h5>In order to see the phone number and use the app the way it was intended to you have to sign up first.</h5>
+<p>In order to see the phone number and use the app the way it was intended to users have to sign up first.</p>
+<br/>
+<p>The project is built with Ruby On Rails framework and Twilio API.</p>
 <br/><br/>
 ![screenshot](app/assets/images/screenshot.jpg?raw=true)
 <br/><br/><br/>
